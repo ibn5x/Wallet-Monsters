@@ -8,8 +8,11 @@ public class PlayerController : MonoBehaviour
     
     public float horizontalValue;
     public float speed; 
+
+    public float jumpForce;
     private Rigidbody2D rb;
     private float moveInput;
+    private float jumpInput;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +22,13 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         moveInput = Input.GetAxis("Horizontal"); //-1  move left | 0 stand still | 1 move right
-        rb.velocity = new Vector2(moveInput*speed, rb.velocity.y);     
+        rb.velocity = new Vector2(moveInput*speed, rb.velocity.y);    
+
+        jumpInput = Input.GetAxis("Vertical"); //-1 move down | 0 nothing | 1 move up
+        if(jumpInput > 0)
+            {
+               rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            } 
 
     }
 
