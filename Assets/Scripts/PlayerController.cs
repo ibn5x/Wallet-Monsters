@@ -52,6 +52,7 @@ public class PlayerController : MonoBehaviour
         else if(other.gameObject.CompareTag("Coin"))
         {
            Destroy(other.gameObject); //enjimon touched coin, built in function removes them.
+           TextManager.instance.IncreaseScore(); //accessing static instance and calling function to increase score
         }
     }
 
