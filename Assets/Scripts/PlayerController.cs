@@ -9,18 +9,23 @@ public class PlayerController : MonoBehaviour
     public float horizontalValue;
     public float speed; 
 
+    public float jumpsAllowed;
+    private float jumpedAmount;
+
     public float jumpForce;
     private Rigidbody2D rb;
     private float moveInput;
     private float jumpInput;
+    private float previousJumpInput;
 
-    private bool isJumping;
+   
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        isJumping = false;
+        previousJumpInput = 0;
+        
     }
 
     void FixedUpdate()
@@ -29,19 +34,20 @@ public class PlayerController : MonoBehaviour
         rb.velocity = new Vector2(moveInput*speed, rb.velocity.y);    
 
         jumpInput = Input.GetAxis("Vertical"); //-1 move down | 0 nothing | 1 move up
-        if(jumpInput > 0 && isJumping == false)
+        if(jumpInput > 0 && jumpedAmount < jumpsAllowed && previousJumpInput == 0)
             {
                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-               isJumping = true;
+               jumpedAmount++;
             } 
-
+        previousJumpInput = jumpInput; //after we finish set it to current input value.
     }
 
 //will be called as soon as Enjimon collides with "other" ensure its ground or what were detecting
     void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject.CompareTag("Ground")){
-            isJumping = false;
+        if(other.gameObject.CompareTag("Ground"))
+        {
+            jumpedAmount = 0; //enjimon touched ground reset count.
         }
     }
 
