@@ -37,6 +37,14 @@ public class PlayerController : MonoBehaviour
 
     }
 
+//will be called as soon as Enjimon collides with "other" ensure its ground or what were detecting
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if(other.gameObject.CompareTag("Ground")){
+            isJumping = false;
+        }
+    }
+
     void Move() 
     {
         horizontalValue = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
