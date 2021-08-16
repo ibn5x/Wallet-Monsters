@@ -13,10 +13,14 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private float moveInput;
     private float jumpInput;
+
+    private bool isJumping;
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        isJumping = false;
     }
 
     void FixedUpdate()
@@ -25,9 +29,10 @@ public class PlayerController : MonoBehaviour
         rb.velocity = new Vector2(moveInput*speed, rb.velocity.y);    
 
         jumpInput = Input.GetAxis("Vertical"); //-1 move down | 0 nothing | 1 move up
-        if(jumpInput > 0)
+        if(jumpInput > 0 && isJumping == false)
             {
                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+               isJumping = true;
             } 
 
     }
