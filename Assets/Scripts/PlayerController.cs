@@ -49,6 +49,10 @@ public class PlayerController : MonoBehaviour
         {
             jumpedAmount = 0; //enjimon touched ground reset count.
         }
+        else if(other.gameObject.CompareTag("Coin"))
+        {
+           Destroy(other.gameObject); //enjimon touched coin, built in function removes them.
+        }
     }
 
     void Move() 
