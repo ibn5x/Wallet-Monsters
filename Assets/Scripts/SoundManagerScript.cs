@@ -10,8 +10,8 @@ public class SoundManagerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        jumpSound = Audio.Load<AudioClip>("Jump");
-        coinCollect = Audio.Load<AudioClip>("Collect");
+        jumpSound = Resources.Load<AudioClip>("Jump");
+        coinCollect = Resources.Load<AudioClip>("Collect");
 
         audioSrc = GetComponent<AudioSource> ();
     }
