@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class SoundManagerScript : MonoBehaviour
 {
-    public static AudioClip jumpSound, coinCollect;
+    public static AudioClip playerJumpSound, coinCollectSound;
     static AudioSource audioSrc;
 
     // Start is called before the first frame update
     void Start()
     {
-        jumpSound = Resources.Load<AudioClip>("Jump");
-        coinCollect = Resources.Load<AudioClip>("Collect");
+        playerJumpSound = Resources.Load<AudioClip>("playerJump");
+        coinCollectSound = Resources.Load<AudioClip>("coinCollect");
 
         audioSrc = GetComponent<AudioSource> ();
     }
@@ -25,12 +25,12 @@ public class SoundManagerScript : MonoBehaviour
     public static void PlaySound (string clip)
     {
         switch (clip){
-            case "Jump":
-            audioSrc.PlayOneShot(jumpSound);
+            case "playerJump":
+            audioSrc.PlayOneShot (playerJumpSound);
             break;
 
-            case "Collect":
-            audioSrc.PlayOneShot(coinCollect);
+            case "coinCollect":
+            audioSrc.PlayOneShot (coinCollectSound);
             break;
         }
     }

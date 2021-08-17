@@ -36,8 +36,10 @@ public class PlayerController : MonoBehaviour
         jumpInput = Input.GetAxis("Vertical"); //-1 move down | 0 nothing | 1 move up
         if(jumpInput > 0 && jumpedAmount < jumpsAllowed && previousJumpInput == 0)
             {
+               SoundManagerScript.PlaySound("playerJump");
+                
                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-               SoundManagerScript.PlaySound("Jump");
+               
                jumpedAmount++;
             } 
         previousJumpInput = jumpInput; //after we finish set it to current input value.
@@ -52,8 +54,10 @@ public class PlayerController : MonoBehaviour
         }
         else if(other.gameObject.CompareTag("Coin"))
         {
+           SoundManagerScript.PlaySound("coinCollect");
+
            Destroy(other.gameObject); //enjimon touched coin, built in function removes them.
-           SoundManagerScript.PlaySound("Collect");
+           
            TextManager.instance.IncreaseScore(); //accessing static instance and calling function to increase score
         }
     }
