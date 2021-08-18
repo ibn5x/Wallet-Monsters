@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+     public  HealthBar healthbar;
     public bool facedRight;
     
     public float horizontalValue;
@@ -18,13 +19,14 @@ public class PlayerController : MonoBehaviour
     private float jumpInput;
     private float previousJumpInput;
 
-   
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         previousJumpInput = 0;
+
+       
         
     }
 
@@ -37,7 +39,7 @@ public class PlayerController : MonoBehaviour
         if(jumpInput > 0 && jumpedAmount < jumpsAllowed && previousJumpInput == 0)
             {
                SoundManagerScript.PlaySound("playerJump");
-                
+
                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
                
                jumpedAmount++;
@@ -59,7 +61,10 @@ public class PlayerController : MonoBehaviour
            Destroy(other.gameObject); //enjimon touched coin, built in function removes them.
            
            TextManager.instance.IncreaseScore(); //accessing static instance and calling function to increase score
+           
         }
+        
+        
     }
 
     void Move() 
@@ -76,6 +81,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+  
     // Update is called once per frame
     void Update()
     {

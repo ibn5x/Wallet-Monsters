@@ -8,15 +8,13 @@ public class EnemyGFX : MonoBehaviour
     public AIPath aiPath;
 
     
-      void OnCollisionEnter2D(Collision2D other)
+    void OnCollisionEnter2D(Collision2D other)
     {
          if(other.gameObject.CompareTag("Coin"))
         {
            SoundManagerScript.PlaySound("coinCollect");
 
-           Destroy(other.gameObject); 
-
-           
+           Destroy(other.gameObject);    
         }
     }
 
