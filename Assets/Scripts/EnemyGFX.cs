@@ -16,9 +16,7 @@ public class EnemyGFX : MonoBehaviour
 
            Destroy(other.gameObject); 
 
-            TextManager.instance.IncreaseBag();
            
-          // TextManager.instance.IncreaseScore(); //accessing static instance and calling function to increase score
         }
     }
 
