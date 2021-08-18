@@ -8,11 +8,14 @@ public class TextManager : MonoBehaviour
 
     public static TextManager instance;//static instance method available to all classes (including playerController). 
     int score;
+   
     public void IncreaseScore()
     {
         score++;
         instance.textMesh.text = "Enjimon EXP Tokens: " + score;
     }
+
+   
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +24,7 @@ public class TextManager : MonoBehaviour
             instance = this;
         }
         score = 0;
+        
         
     }
 

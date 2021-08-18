@@ -5,12 +5,33 @@ using Pathfinding;
 
 public class EnemyGFX : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public AIPath aiPath;
 
+    
+      void OnCollisionEnter2D(Collision2D other)
+    {
+         if(other.gameObject.CompareTag("Coin"))
+        {
+           SoundManagerScript.PlaySound("coinCollect");
+
+           Destroy(other.gameObject); 
+
+            TextManager.instance.IncreaseBag();
+           
+          // TextManager.instance.IncreaseScore(); //accessing static instance and calling function to increase score
+        }
+    }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(aiPath.desiredVelocity.x >= 0.01f){
+
+            transform.localScale = new Vector3(1f, 1f, 1f); 
+
+        }else if(aiPath.desiredVelocity.x <= -0.01f){
+       
+         transform.localScale = new Vector3(-1f, 1f, 1f); 
+        }
     }
 }
