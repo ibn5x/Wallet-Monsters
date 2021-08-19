@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-
-    
       public int maxHealth = 100;
       public int currentHealth;
       public  HealthBar healthBar;
@@ -23,6 +21,11 @@ public class Health : MonoBehaviour
         currentHealth -= damage;
 
         healthBar.SetHealth(currentHealth);
+
+         if(currentHealth <= 0)
+        {
+            Die();
+        }
     }
 
      void OnCollisionEnter2D(Collision2D other)
@@ -35,5 +38,12 @@ public class Health : MonoBehaviour
         
         
     }
+
+     void Die()
+    {
+        //Instantiate(deathEffect, transform.position, Quaternion.identity);
+        Destroy(gameObject);
+    }
+
 
 }

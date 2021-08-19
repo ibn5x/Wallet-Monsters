@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-
+//Raycasting script for implementing attack
 public class Magic : MonoBehaviour
 {
     public Transform firePoint;
@@ -14,8 +14,7 @@ public class Magic : MonoBehaviour
    
    
 
-    // Update is called once per frame
-    void Update()
+        void Update()
     {
         if(Input.GetButtonDown("Fire1")) 
         {
@@ -28,22 +27,18 @@ public class Magic : MonoBehaviour
 
           if(hitInfo)
           {
-              Debug.Log(hitInfo.transform.name);
-
-             // Enemy enemy = hitInfo.transform.GetComponent<Enemy>();
-
-            //  if(enemy != null)
-         //   {
-         //      enemy.TakeDamage(damage);
-         //   }
-
              
-        /*       Enemy enemy = hitInfo.transform.GetComponent<Enemy>();
-          
-           Instantiate(impactEffect, hitInfo.point, Quaternion.identity);
+             Enemy enemy = hitInfo.transform.GetComponent<Enemy>();
+
+             if(enemy != null)
+           {
+              enemy.TakeSomeDamage(damage);
+           }
+
+          // Instantiate(impactEffect, hitInfo.point, Quaternion.identity);
            
-          }
-          */
+          
+          
           }
         
     }
