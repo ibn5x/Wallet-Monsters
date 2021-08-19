@@ -8,6 +8,7 @@ public class Health : MonoBehaviour
       public int currentHealth;
       public  HealthBar healthBar;
     
+     public GameObject deathEffect;
    
    void Start()
     {
@@ -41,7 +42,7 @@ public class Health : MonoBehaviour
 
      void Die()
     {
-        //Instantiate(deathEffect, transform.position, Quaternion.identity);
+        Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 

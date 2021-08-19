@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 25585263}
   - component: {fileID: 25585264}
   - component: {fileID: 25585265}
-  - component: {fileID: 25585266}
+  - component: {fileID: 25585267}
   m_Layer: 0
   m_Name: 10[PNG]
   m_TagString: Enjimon
@@ -184,7 +184,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1497498939
   m_SortingLayer: 2
-  m_SortingOrder: 6
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 6ac5ce4bf739ce04abb094635be8ce13, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
@@ -279,9 +279,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  currentHealth: 0
+  currentHealth: 100
   healthBar: {fileID: 746916076}
---- !u!114 &25585266
+--- !u!114 &25585267
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -294,8 +294,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 944081250}
-  damage: 2
-  impactEffect: {fileID: 0}
+  damage: 5
+  impactEffect: {fileID: 3968076134699723412, guid: 7841def67e895f648a6c26b485fcfe8c, type: 3}
 --- !u!1 &50437362
 GameObject:
   m_ObjectHideFlags: 0
@@ -750,12 +750,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 183195255}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b86a966312b5bc4ebaa28cfe22505af, type: 3}
+  m_Script: {fileID: 11500000, guid: 40a945991bf3a834f8ecf835bca6cc4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
-  currentHealth: 0
-  healthBar: {fileID: 1117128021}
+  totalHealth: 100
+  healthNow: 0
+  enemyHealthBar: {fileID: 1117128021}
+  deathEffect: {fileID: 0}
 --- !u!1 &275528833
 GameObject:
   m_ObjectHideFlags: 0
@@ -1862,7 +1863,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 944081249}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: -0.8, z: 0}
+  m_LocalPosition: {x: 4.29, y: -0.84, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 25585261}
@@ -7828,7 +7829,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 987326634931581885, guid: 128e74b9ff069dc4db066805aa6eb2be, type: 3}
       propertyPath: m_SortingOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 987326634931581887, guid: 128e74b9ff069dc4db066805aa6eb2be, type: 3}
       propertyPath: m_Name
