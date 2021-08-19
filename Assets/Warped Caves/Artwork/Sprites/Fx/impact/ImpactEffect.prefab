@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3968076134699723412
+--- !u!1 &1957248603556924605
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,9 +8,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 734786504756299146}
-  - component: {fileID: 7308284717300369353}
-  - component: {fileID: 2689226397178114141}
+  - component: {fileID: 7942629632513055400}
+  - component: {fileID: 8307335307829307778}
+  - component: {fileID: 7259169141923697210}
   m_Layer: 0
   m_Name: ImpactEffect
   m_TagString: Untagged
@@ -18,27 +18,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &734786504756299146
+--- !u!4 &7942629632513055400
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3968076134699723412}
+  m_GameObject: {fileID: 1957248603556924605}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.154, y: 5.37475, z: 0}
-  m_LocalScale: {x: 2.7598, y: 2.7598, z: 2.7598}
+  m_LocalPosition: {x: -2.131, y: 5.352, z: 0}
+  m_LocalScale: {x: 3.1118681, y: 3.1118681, z: 3.1118681}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &7308284717300369353
+--- !u!212 &8307335307829307778
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3968076134699723412}
+  m_GameObject: {fileID: 1957248603556924605}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -83,17 +83,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &2689226397178114141
+--- !u!95 &7259169141923697210
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3968076134699723412}
+  m_GameObject: {fileID: 1957248603556924605}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 48f0876cfcf3789409113a7319e2c214, type: 2}
+  m_Controller: {fileID: 9100000, guid: 25c7dbe85f09f534eb532ff76bede47a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

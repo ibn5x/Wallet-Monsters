@@ -35,8 +35,7 @@ public class Magic : MonoBehaviour
               enemy.TakeSomeDamage(damage);
            }
 
-             Instantiate(impactEffect, hitInfo.point, Quaternion.identity);
-             
+             Instantiate(impactEffect, hitInfo.point, Quaternion.identity);    
           }
         
     }

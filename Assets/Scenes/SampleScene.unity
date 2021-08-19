@@ -279,8 +279,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  currentHealth: 100
+  currentHealth: 0
   healthBar: {fileID: 746916076}
+  deathEffect: {fileID: 5325808719745745813, guid: 8c28123a2c5d37e428c7807e2cce1e94, type: 3}
 --- !u!114 &25585267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -294,8 +295,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   firePoint: {fileID: 944081250}
-  damage: 5
-  impactEffect: {fileID: 3968076134699723412, guid: 7841def67e895f648a6c26b485fcfe8c, type: 3}
+  damage: 20
+  impactEffect: {fileID: 1957248603556924605, guid: 7841def67e895f648a6c26b485fcfe8c, type: 3}
 --- !u!1 &50437362
 GameObject:
   m_ObjectHideFlags: 0
@@ -756,7 +757,7 @@ MonoBehaviour:
   totalHealth: 100
   healthNow: 0
   enemyHealthBar: {fileID: 1117128021}
-  deathEffect: {fileID: 0}
+  deathEffect: {fileID: 5325808719745745813, guid: 8c28123a2c5d37e428c7807e2cce1e94, type: 3}
 --- !u!1 &275528833
 GameObject:
   m_ObjectHideFlags: 0
