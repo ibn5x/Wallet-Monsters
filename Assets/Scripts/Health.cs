@@ -42,6 +42,7 @@ public class Health : MonoBehaviour
 
      void Die()
     {
+        SoundManagerScript.PlaySound("playerVaporized");
         Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }

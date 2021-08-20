@@ -52,7 +52,9 @@ public class PlayerController : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Ground"))
         {
+            SoundManagerScript.PlaySound("playerLands");
             jumpedAmount = 0; //enjimon touched ground reset count.
+            Debug.Log("Sound should have played Bro. Mikal!");
         }
         else if(other.gameObject.CompareTag("Coin"))
         {

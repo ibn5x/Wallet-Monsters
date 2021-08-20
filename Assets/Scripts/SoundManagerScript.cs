@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class SoundManagerScript : MonoBehaviour
 {
-    public static AudioClip playerJumpSound, coinCollectSound;
+    public static AudioClip playerJumpSound, coinCollectSound, playerAttackSound, 
+    playerImpactSound, playerVaporizedSound, playerLandingSound, npcImpactSound;
     static AudioSource audioSrc;
 
     // Start is called before the first frame update
@@ -12,6 +13,11 @@ public class SoundManagerScript : MonoBehaviour
     {
         playerJumpSound = Resources.Load<AudioClip>("playerJump");
         coinCollectSound = Resources.Load<AudioClip>("coinCollect");
+        playerAttackSound = Resources.Load<AudioClip>("playerAttack");
+        playerImpactSound = Resources.Load<AudioClip>("playerImpact");
+        playerVaporizedSound = Resources.Load<AudioClip>("playerVaporized");
+        playerLandingSound = Resources.Load<AudioClip>("playerLands");
+        npcImpactSound = Resources.Load<AudioClip>("npcImpact");
 
         audioSrc = GetComponent<AudioSource> ();
     }
@@ -31,6 +37,26 @@ public class SoundManagerScript : MonoBehaviour
 
             case "coinCollect":
             audioSrc.PlayOneShot (coinCollectSound);
+            break;
+
+            case "playerAttack":
+            audioSrc.PlayOneShot (playerAttackSound);
+            break;
+
+            case "playerImpact":
+            audioSrc.PlayOneShot (playerImpactSound);
+            break;
+
+            case "playerVaporized":
+            audioSrc.PlayOneShot (playerVaporizedSound);
+            break;
+
+            case "playerLands":
+            audioSrc.PlayOneShot (playerLandingSound);
+            break;
+
+            case "npcImpact":
+            audioSrc.PlayOneShot (npcImpactSound);
             break;
         }
     }

@@ -19,6 +19,7 @@ public class Magic : MonoBehaviour
         if(Input.GetButtonDown("Fire1")) 
         {
             Shoot();
+            SoundManagerScript.PlaySound("playerAttack");
         }
     }
         void Shoot()
@@ -32,6 +33,7 @@ public class Magic : MonoBehaviour
 
              if(enemy != null)
            {
+              SoundManagerScript.PlaySound("playerImpact");
               enemy.TakeSomeDamage(damage);
            }
 

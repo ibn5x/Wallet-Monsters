@@ -12,10 +12,13 @@ public class EnemyGFX : MonoBehaviour
     {
          if(other.gameObject.CompareTag("Coin"))
         {
-           
+           SoundManagerScript.PlaySound("coinCollect");
 
            Destroy(other.gameObject);    
-           SoundManagerScript.PlaySound("coinCollect");
+           
+        }else if(other.gameObject.CompareTag("Enjimon"))
+        {
+            SoundManagerScript.PlaySound("npcImpact");
         }
     }
 

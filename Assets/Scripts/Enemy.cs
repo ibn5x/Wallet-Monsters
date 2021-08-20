@@ -33,6 +33,7 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
+        SoundManagerScript.PlaySound("playerVaporized");
         Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
