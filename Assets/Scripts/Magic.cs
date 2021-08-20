@@ -8,8 +8,10 @@ public class Magic : MonoBehaviour
 {
     public Transform firePoint;
     public int damage = 2;
+   
 
     public GameObject impactEffect; 
+    public LineRenderer lineRenderer; 
 
    
    
@@ -18,11 +20,11 @@ public class Magic : MonoBehaviour
     {
         if(Input.GetButtonDown("Fire1")) 
         {
-            Shoot();
+           StartCoroutine(Shoot());
             SoundManagerScript.PlaySound("playerAttack");
         }
     }
-        void Shoot()
+        IEnumerator Shoot()
         {
           RaycastHit2D hitInfo = Physics2D.Raycast(firePoint.position, firePoint.right);
 
@@ -38,7 +40,20 @@ public class Magic : MonoBehaviour
            }
 
              Instantiate(impactEffect, hitInfo.point, Quaternion.identity);    
+
+             lineRenderer.SetPosition(0, firePoint.position); //point of origin 
+             lineRenderer.SetPosition(1, hitInfo.point); //origin destination 
+          }else
+          {
+              lineRenderer.SetPosition(0, firePoint.position); //point of origin 
+              lineRenderer.SetPosition(1, firePoint.position + firePoint.right * 100); //origin destination (continuous)
           }
-        
+
+          lineRenderer.enabled = true; //turn on line renderer
+
+            //wait a set ms
+            yield return new WaitForSeconds(0.02f);   //new 0.02f; 
+
+          lineRenderer.enabled = false; //turn it off  
     }
 }
