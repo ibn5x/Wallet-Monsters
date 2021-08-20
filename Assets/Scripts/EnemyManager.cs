@@ -19,8 +19,8 @@ public class EnemyManager : MonoBehaviour
     }
     void SpawnNewEnemy()
     {
-        
-        Instantiate(m_EnemyPrefab, m_SpawnPoints[0].transform.position, Quaternion.identity); //instantiate enemy NPC prefab, enter position (spawn point), then quatern for 
+        int randomNumber = Mathf.RoundToInt(Random.Range(0f, m_SpawnPoints.Length-1)); 
+        Instantiate(m_EnemyPrefab, m_SpawnPoints[randomNumber].transform.position, Quaternion.identity); //instantiate enemy NPC prefab, enter position (spawn point), then quatern for 
         
     }
 

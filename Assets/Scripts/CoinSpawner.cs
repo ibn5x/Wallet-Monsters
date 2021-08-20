@@ -20,7 +20,7 @@ public class CoinSpawner : MonoBehaviour
     void Spawn() 
     {
         for(int i = 0; i < 154; i++){
-            Instantiate(prefab, new Vector2(-80 + 0.7f * i, 27),Quaternion.identity); //formula for placement when spawning
+            Instantiate(prefab, new Vector2(-30 + 0.7f * i, 270),Quaternion.identity); //formula for placement when spawning
         }
     }
 
