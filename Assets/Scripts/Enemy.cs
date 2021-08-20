@@ -11,7 +11,13 @@ public class Enemy : MonoBehaviour
     public int healthNow;
     public  HealthBar enemyHealthBar;
 
+    public delegate void EnemyKilled(); //defined
+    public static event EnemyKilled OnEnemyKilled; //emmit event on...
+
     public GameObject deathEffect;
+
+    public GameObject prefab;
+    public GameObject prefabGrouped;
     
      void Start()
     {
@@ -28,6 +34,7 @@ public class Enemy : MonoBehaviour
         if(healthNow <= 0)
         {
             Die();
+         
         }
     }
 
@@ -35,7 +42,26 @@ public class Enemy : MonoBehaviour
     {
         SoundManagerScript.PlaySound("playerVaporized");
         Instantiate(deathEffect, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+        
+        prefabGrouped.transform.position = new Vector3(100 * 1000, 100 * 1000, 1);
+        if(OnEnemyKilled != null)
+        {
+            
+            OnEnemyKilled();
+          
+            
+        }
+        
+       
+       
+    }
+
+    void Spawn()
+    {
+       // Instantiate(prefab, new Vector3(100, 100, 1),Quaternion.identity); //formula for placement when spawning
+        healthNow = totalHealth;
+        enemyHealthBar.SetMaxHealth(totalHealth);
+        Debug.Log("Respawn NPC!"); 
     }
 
 }

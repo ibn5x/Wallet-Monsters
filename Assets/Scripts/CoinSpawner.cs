@@ -5,9 +5,11 @@ using UnityEngine;
 public class CoinSpawner : MonoBehaviour
 {
     public float timeBetweenSpawn;
+    public float payoutDifficulty;
     public GameObject prefab; //pass the coin prefab to script through inspector
 
     private float timeUntilNextSpawn;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +37,8 @@ public class CoinSpawner : MonoBehaviour
         if(timeUntilNextSpawn <= 0.0f)
         {
             Spawn();
+            
+            timeBetweenSpawn+= payoutDifficulty; //increase time between coin payout
 
             timeUntilNextSpawn = timeBetweenSpawn; // reset time.
         }    
