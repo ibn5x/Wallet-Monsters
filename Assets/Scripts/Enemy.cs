@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
     public delegate void EnemyKilled(); //defined
     public static event EnemyKilled OnEnemyKilled; //emmit event on...
 
+
     public GameObject deathEffect;
 
     public GameObject prefab;
@@ -48,6 +49,7 @@ public class Enemy : MonoBehaviour
         {
             
             OnEnemyKilled();
+          
           
             
         }

@@ -7,14 +7,13 @@ using UnityEngine;
 public class Magic : MonoBehaviour
 {
     public Transform firePoint;
-    public int damage = 2;
+    public int damage;
    
-
     public GameObject impactEffect; 
     public LineRenderer lineRenderer; 
 
    
-   
+ 
 
         void Update()
     {
@@ -24,6 +23,8 @@ public class Magic : MonoBehaviour
             SoundManagerScript.PlaySound("playerAttack");
         }
     }
+
+    
         IEnumerator Shoot()
         {
           RaycastHit2D hitInfo = Physics2D.Raycast(firePoint.position, firePoint.right);
@@ -55,5 +56,7 @@ public class Magic : MonoBehaviour
             yield return new WaitForSeconds(0.02f);   //new 0.02f; 
 
           lineRenderer.enabled = false; //turn it off  
+
+         
     }
 }

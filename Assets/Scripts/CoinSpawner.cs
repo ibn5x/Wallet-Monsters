@@ -20,7 +20,7 @@ public class CoinSpawner : MonoBehaviour
     void Spawn() 
     {
         for(int i = 0; i < 154; i++){
-            Instantiate(prefab, new Vector2(-40 + 0.7f * i, 27),Quaternion.identity); //formula for placement when spawning
+            Instantiate(prefab, new Vector2(-80 + 0.7f * i, 27),Quaternion.identity); //formula for placement when spawning
         }
     }
 
@@ -38,9 +38,10 @@ public class CoinSpawner : MonoBehaviour
         {
             Spawn();
             
-            timeBetweenSpawn+= payoutDifficulty; //increase time between coin payout
+            timeBetweenSpawn+= payoutDifficulty + 1; //increase time between coin payout
 
             timeUntilNextSpawn = timeBetweenSpawn; // reset time.
+           
         }    
     }
 }
